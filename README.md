@@ -39,8 +39,6 @@ DreamForger is an innovative platform designed to help students break free from 
 ### Backend
 - FastAPI (Python)
 - PostgreSQL database
-- SQLAlchemy ORM
-- Alembic for migrations
 - Pydantic for data validation
 
 ## 🚀 Getting Started
