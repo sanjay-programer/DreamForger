@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dreamforge cosmic theme - we only need dark mode */
+    --background: 225 21% 13%; /* cosmic charcoal */
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 14%; /* cosmic obsidian */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 225 21% 13%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 180 100% 55%; /* neon cyan */
+    --primary-foreground: 240 10% 3.9%;
+
+    --secondary: 300 100% 50%; /* neon magenta */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 225 15% 25%;
+    --muted-foreground: 240 5% 84.9%;
+
+    --accent: 120 100% 54%; /* neon green */
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 25%;
+    --input: 240 10% 20%;
+    --ring: 265 83% 75%; /* neon purple */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 240 10% 8%; /* darker than cosmic black */
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 265 75% 75%; /* neon purple */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 14%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 186 100% 50%; /* neon cyan */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased overflow-x-hidden;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer utilities {
+  .glassmorphism {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20 shadow-xl;
+  }
+  
+  .glassmorphism-dark {
+    @apply backdrop-blur-lg bg-cosmic-black/40 border border-white/10 shadow-xl;
+  }
+  
+  .neon-glow-cyan {
+    @apply shadow-[0_0_10px_1px_theme(colors.neon.cyan)];
+  }
+  
+  .neon-glow-magenta {
+    @apply shadow-[0_0_10px_1px_theme(colors.neon.magenta)];
+  }
+  
+  .neon-glow-green {
+    @apply shadow-[0_0_10px_1px_theme(colors.neon.green)];
+  }
+  
+  .neon-glow-purple {
+    @apply shadow-[0_0_10px_1px_theme(colors.neon.purple)];
+  }
+  
+  .neon-border-cyan {
+    @apply border border-neon-cyan shadow-[0_0_5px_0px_theme(colors.neon.cyan)];
+  }
+  
+  .neon-border-magenta {
+    @apply border border-neon-magenta shadow-[0_0_5px_0px_theme(colors.neon.magenta)];
+  }
+  
+  .neon-border-green {
+    @apply border border-neon-green shadow-[0_0_5px_0px_theme(colors.neon.green)];
+  }
+  
+  .neon-text-cyan {
+    @apply text-neon-cyan drop-shadow-[0_0_3px_theme(colors.neon.cyan)];
+  }
+  
+  .neon-text-magenta {
+    @apply text-neon-magenta drop-shadow-[0_0_3px_theme(colors.neon.magenta)];
+  }
+  
+  .neon-text-green {
+    @apply text-neon-green drop-shadow-[0_0_3px_theme(colors.neon.green)];
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg;
+  }
+  
+  .cosmic-gradient {
+    @apply bg-gradient-to-br from-cosmic-charcoal via-cosmic-obsidian to-cosmic-purple;
+  }
+}
